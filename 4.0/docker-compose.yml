@@ -11,8 +11,9 @@ services:
       - REDMINE_DB_POSTGRES=db
       - REDMINE_DB_PASSWORD=example
       - REDMINE_DB_USERNAME=redmine
+      - REDMINE_PLUGINS_MIGRATE=1
     volumes:
-      - redmine:/usr/src/redmine/files
+      - redmine:/usr/src/redmine
     ports:
       - 8019:3000
     depends_on:
