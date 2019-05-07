@@ -8,8 +8,8 @@ services:
     ports:
       - 8080:3000
     environment:
-      - REDMINE_DB_POSTGRES: db
-      - REDMINE_DB_PASSWORD: example
+      - REDMINE_DB_POSTGRES=db
+      - REDMINE_DB_PASSWORD=example
     volumes:
       - redmine:/usr/src/redmine/files
     ports:
