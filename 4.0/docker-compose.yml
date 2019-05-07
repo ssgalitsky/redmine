@@ -12,6 +12,8 @@ services:
       REDMINE_DB_PASSWORD: example
     volumes:
       - redmine:/usr/src/redmine/files
+    ports:
+      - 8019:3000
  
   db:
     image: postgres:alpine
