@@ -16,11 +16,7 @@ RUN set -eux; \
 # pre-build "passenger_native_support.so" while we have the compiler toolchain available
 	passenger-config build-native-support; \
 # the above command always exits with a zero exit code, but if we run it again and it was successful, it'll have empty output (that's the best way I can find to verify that it's worked)
-	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; \
-	\
-	apt-mark auto '.*' > /dev/null; \
-	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; \
-	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
+	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi
 
 # pre-download the PassengerAgent and the NGINX engine
 RUN set -eux; \
