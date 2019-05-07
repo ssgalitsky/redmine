@@ -10,6 +10,7 @@ services:
     environment:
       - REDMINE_DB_POSTGRES=db
       - REDMINE_DB_PASSWORD=example
+      - REDMINE_DB_USERNAME=redmine
     volumes:
       - redmine:/usr/src/redmine/files
     ports:
