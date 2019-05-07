@@ -152,6 +152,10 @@ RUN set -eux; \
 	; \
 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
 
+RUN apt-get update && apt-get install -y \
+        make \
+        gcc
+
 VOLUME /usr/src/redmine/files
 
 COPY docker-entrypoint.sh /
